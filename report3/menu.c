@@ -21,12 +21,6 @@ void dbdelete();
 int main(int argc, char *argv[]) {
 
 	int select = 0;
-	/*
-	   if(argc < 2) {
-	   fprintf(stderr, "사용법 : %s file\n", argv[0]);
-	   exit(1);
-	   }
-	 */
 
 	while(1) {
 		system("clear");
@@ -56,7 +50,7 @@ int main(int argc, char *argv[]) {
 				dbdelete();
 				break;
 			case 0:
-				exit(0);
+				return 0;
 			default:
 				break;
 		}
@@ -105,8 +99,6 @@ void dbquery() {
 		getchar();
 
 		if ((fd = open(argv, O_RDONLY)) == -1) {
-			//perror(argv);
-			//exit(2);
 			printf("해당하는 파일이 없습니다!\n");
 			printf("다시 입력하시겠습니까?(Y/N):");
 			c = getch();
@@ -159,8 +151,6 @@ void dbupdate()
 		getchar();
 
 		if ((fd = open(argv, O_RDWR)) == -1) {
-			//perror(argv);
-			//exit(2);
 			printf("해당하는 파일이 없습니다!\n");
 			printf("다시 입력하시겠습니까?(Y/N):");
 			c = getch();
@@ -217,8 +207,6 @@ void dbinsert() {
 		getchar();
 
 		if ((fd = open(argv, O_WRONLY)) == -1) {
-			//perror(argv);
-			//exit(2);
 			printf("해당하는 파일이 없습니다!\n");
 			printf("다시 입력하시겠습니까?(Y/N):");
 			c = getch();
@@ -270,8 +258,6 @@ void dbdelete() {
 		getchar();
 
 		if ((fd = open(argv, O_RDWR)) == -1) {
-			//perror(argv);
-			//exit(2);
 			printf("해당하는 파일이 없습니다!\n");
 			printf("다시 입력하시겠습니까?(Y/N):");
 			c = getch();
